@@ -1,0 +1,133 @@
+:root {
+  color-scheme: dark;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #12161d;
+  color: #f6f4ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(75, 190, 130, 0.18), transparent 28%),
+    linear-gradient(135deg, #111820, #1d2027 58%, #111820);
+}
+
+button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 700;
+  color: #12161d;
+  background: #f2c94c;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+button:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.game-shell {
+  width: min(100%, 560px);
+  display: grid;
+  gap: 16px;
+}
+
+.scorebar {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.scorebar > div,
+.scorebar button,
+.restart {
+  background: rgba(255, 255, 255, 0.09);
+  color: #f6f4ee;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.scorebar > div {
+  min-height: 58px;
+  border-radius: 8px;
+  padding: 9px 14px;
+}
+
+.label {
+  display: block;
+  color: #a8b4c3;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 1.45rem;
+}
+
+canvas {
+  width: 100%;
+  aspect-ratio: 1;
+  display: block;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  background: #0d1117;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.36);
+}
+
+.controls {
+  display: none;
+  justify-items: center;
+  gap: 8px;
+}
+
+.controls div {
+  display: flex;
+  gap: 8px;
+}
+
+.message {
+  min-height: 22px;
+  margin: 0;
+  text-align: center;
+  color: #c8d0d8;
+}
+
+.restart {
+  justify-self: center;
+  padding: 0 18px;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 16px;
+  }
+
+  .scorebar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .scorebar button {
+    grid-column: span 2;
+  }
+
+  .controls {
+    display: grid;
+  }
+}
